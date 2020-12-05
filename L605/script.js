@@ -9,8 +9,19 @@ var students = [
 
 
 function displayStudentsTable(studentList){
-    //write code
+    const table = document.createElement('table')
+    studentList.forEach((stu) => {
+        const tr = document.createElement('tr')
+        table.appendChild(tr)
+        for (key in stu) {
+            const td = document.createElement('td')
+            td.appendChild(document.createTextNode(stu[key]))
+            tr.appendChild(td)
+        }
+        table.appendChild(tr)
+    })
+    document.querySelector('#student-list').appendChild(table)
 }
 
 
-displayStudentsTable(studens);
+displayStudentsTable(students);
